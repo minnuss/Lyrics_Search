@@ -1,0 +1,142 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 10px
+  font-family: 'Poppins', sans-serif; // 'Montserrat', 'Roboto';
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.4rem;
+
+  button {
+    cursor: pointer;
+    outline: none;
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  header {
+    background: url(../img/bg.jpg) no-repeat center / cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 0;
+    position: relative;
+    text-align: center;
+
+    // put all inside header to front
+    & * {
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      margin: 0 0 30px;
+    }
+
+    form {
+      position: relative;
+      width: clamp(310px, 50vw, 500px);
+      max-width: 100%;
+
+      input {
+        border: none;
+        border-radius: 50px;
+        font-size: 1.6rem;
+        padding: 15px 30px;
+        width: 100%;
+        outline: none;
+      }
+
+      input::placeholder {
+        font-size: clamp(1.4rem, 2vw, 1.7rem);
+      }
+
+      button {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background-color: #e056fd;
+        border: none;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 1.6rem;
+        padding: 13px 30px;
+      }
+    }
+  }
+
+  // buttons for previous and next results
+  .btn {
+    background-color: #8d56fd;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 4px 10px;
+  }
+
+  ul.songs {
+    list-style-type: none;
+    padding: 0;
+
+    & li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+  }
+
+  .container {
+    margin: 30px auto;
+    width: clamp(310px, 50vw, 500px);
+
+    h2 {
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      text-align: left;
+
+      span {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+    }
+  }
+
+  .centered {
+    display: flex;
+    justify-content: center;
+
+    button {
+      transform: scale(1.3);
+      margin: 15px;
+      outline: none;
+      font-size: 1.2rem;
+    }
+  }
+}
